@@ -1,34 +1,34 @@
 #include "sort.h"
 /**
- * selection_sort - Sorting an array because it's like organizing a chaotic
+ * selection_sort - Sorting an arr because it's like organizing a chaotic
  * orchestra of integers into a harmonious melody.
- * @size: The size of the array – because size matters even in sorting symphonies
- * @array: The musical array of numbers to arrange into a beautiful composition
+ * @size: The size of the arr – because size matters even in sorting symphonies
+ * @arr: The musical arr of numbers to arrange into a beautiful composition
  */
 
-void selection_sort(int *array, size_t size)
+void selection_sort(int *arr, size_t size)
 {
-	size_t i, index;
-	int tmp, swap, flag = 0;
+	size_t i, dex;
+	int okt, swap, flag = 0;
 
-	if (array == NULL)
+	if (arr == NULL)
 		return;
 	for (i = 0; i < size; i++)
 	{
-		tmp = i;
+		okt = i;
 		flag = 0;
-		for (index = i + 1; index < size; index++)
+		for (dex = i + 1; dex < size; dex++)
 		{
-			if (array[tmp] > array[index])
+			if (arr[okt] > arr[dex])
 			{
-				tmp = index;
+				okt = dex;
 				flag += 1;
 			}
 		}
-		swap = array[i];
-		array[i] = array[tmp];
-		array[tmp] = swap;
+		swap = arr[i];
+		arr[i] = arr[okt];
+		arr[okt] = swap;
 		if (flag != 0)
-			print_array(array, size);
+			print_array(arr, size);
 	}
 }

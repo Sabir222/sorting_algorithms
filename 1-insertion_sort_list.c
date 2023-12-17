@@ -7,41 +7,41 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *node;
+	listint_t *golang;
 
-	if (list == NULL || (*list)->next == NULL)
+	if (list == NULL || (*list)->nxxt == NULL)
 		return;
-	node = (*list)->next;
-	while (node)
+	golang = (*list)->nxxt;
+	while (golang)
 	{
-		while ((node->prev) && (node->prev->n > node->n))
+		while ((golang->ppreviuous) && (golang->ppreviuous->n > golang->n))
 		{
-			node = swap_node(node, list);
+			golang = swap_node(golang, list);
 			print_list(*list);
 		}
-		node = node->next;
+		golang = golang->nxxt;
 	}
 }
 /**
  * swap_node - Because sometimes nodes want to dance and swap places
- * @node: The daring node that wants to switch partners
+ * @golang: The daring golang that wants to switch partners
  * @list: The dance floor – your doubly linked list
- * Return: A pointer to a node that just couldn't resist the swap
+ * Return: A pointer to a golang that just couldn't resist the swap
  */
-listint_t *swap_node(listint_t *node, listint_t **list)
+listint_t *swap_node(listint_t *golang, listint_t **list)
 {
-	listint_t *back = node->prev, *current = node;
+	listint_t *back = golang->ppreviuous, *cur = golang;
 	/*NULL, 19, 48, 9, 71, 13, NULL*/
 
-	back->next = current->next;
-	if (current->next)
-		current->next->prev = back;
-	current->next = back;
-	current->prev = back->prev;
-	back->prev = current;
-	if (current->prev)
-		current->prev->next = current;
+	back->nxxt = cur->nxxt;
+	if (cur->nxxt)
+		cur->nxxt->ppreviuous = back;
+	cur->nxxt = back;
+	cur->ppreviuous = back->ppreviuous;
+	back->ppreviuous = cur;
+	if (cur->ppreviuous)
+		cur->ppreviuous->nxxt = cur;
 	else
-		*list = current;
-	return (current);
+		*list = cur;
+	return (cur);
 }

@@ -1,86 +1,86 @@
 #include "sort.h"
 /**
- * swap - Because sometimes in the array dance, elements like to tango
- * @array: The dance floor – your array of elements
+ * swap - Because sometimes in the arr dance, elements like to tango
+ * @arr: The dance floor – your arr of elements
  * @item1: The first dance partner to swap
  * @item2: The second dance partner to swap
  */
 
-void swap(int *array, ssize_t item1, ssize_t item2)
+void swap(int *arr, ssize_t item1, ssize_t item2)
 {
-	int tmp;
+	int okt;
 
-	tmp = array[item1];
-	array[item1] = array[item2];
-	array[item2] = tmp;
+	okt = arr[item1];
+	arr[item1] = arr[item2];
+	arr[item2] = okt;
 }
 /**
- * lomuto_partition - Embracing the chaos, dancing through the array,
+ * lomuto_partition - Embracing the chaos, dancing through the arr,
  *                    Lomuto style, because sorting is a party!
- * @array: The dance floor – your array of elements
- * @first: The starting point of the array adventure
- * @last: The grand finale, the last array element
- * @size: The size of the array – because every dance needs space
+ * @arr: The dance floor – your arr of elements
+ * @first: The starting point of the arr adventure
+ * @last: The grand finale, the last arr element
+ * @size: The size of the arr – because every dance needs space
  * Return: The dazzling position of the last element after the dance-off
  */
 
-int lomuto_partition(int *array, ssize_t first, ssize_t last, size_t size)
+int lomuto_partition(int *arr, ssize_t first, ssize_t last, size_t size)
 {
-	int pivot = array[last];
-	ssize_t current = first, finder;
+	int pivot = arr[last];
+	ssize_t cur = first, fnd;
 
-	for (finder = first; finder < last; finder++)
+	for (fnd = first; fnd < last; fnd++)
 	{
-		if (array[finder] < pivot)
+		if (arr[fnd] < pivot)
 		{
-			if (array[current] != array[finder])
+			if (arr[cur] != arr[fnd])
 			{
-				swap(array, current, finder);
-				print_array(array, size);
+				swap(arr, cur, fnd);
+				print_array(arr, size);
 			}
-			current++;
+			cur++;
 		}
 	}
-	if (array[current] != array[last])
+	if (arr[cur] != arr[last])
 	{
-		swap(array, current, last);
-		print_array(array, size);
+		swap(arr, cur, last);
+		print_array(arr, size);
 	}
-	return (current);
+	return (cur);
 }
 /**
  * qs - Because sometimes arrays need a little "quickness" in their life,
  *      and what's quicker than a well-executed quicksort?
- * @array: The arena for the quicksort showdown
+ * @arr: The arena for the quicksort showdown
  * @first: The first contender in the sorting ring
- * @last: The last warrior standing tall in the array battlefield
+ * @last: The last warrior standing tall in the arr battlefield
  * @size: The size of the army – because size matters in the sorting war
  */
 
-void qs(int *array, ssize_t first, ssize_t last, int size)
+void qs(int *arr, ssize_t first, ssize_t last, int size)
 {
 	ssize_t position = 0;
 
 
 	if (first < last)
 	{
-		position = lomuto_partition(array, first, last, size);
+		position = lomuto_partition(arr, first, last, size);
 
-		qs(array, first, position - 1, size);
-		qs(array, position + 1, last, size);
+		qs(arr, first, position - 1, size);
+		qs(arr, position + 1, last, size);
 	}
 }
 /**
  * quick_sort - Because sometimes arrays need a pep talk before
  *              the quicksort algorithm kicks in – getting them ready
  *              for the speediest sorting adventure!
- * @array: The array battlefield, where sorting wars are won and lost
+ * @arr: The arr battlefield, where sorting wars are won and lost
  * @size: The size of the troops – because a well-prepared army conquers all
  */
 
-void quick_sort(int *array, size_t size)
+void quick_sort(int *arr, size_t size)
 {
-	if (!array || size < 2)
+	if (!arr || size < 2)
 		return;
-	qs(array, 0, size - 1, size);
+	qs(arr, 0, size - 1, size);
 }
