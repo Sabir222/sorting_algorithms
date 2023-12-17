@@ -29,22 +29,26 @@ int lomuto_partition(int *arr, ssize_t first, ssize_t last, size_t size)
 	int pivot = arr[last];
 	ssize_t cur = first, fnd;
 
-	for (fnd = first; fnd < last; fnd++)
+	for (fnd = first; fnd < last; fnd++)/* comment*/
 	{
-		if (arr[fnd] < pivot)
+		/* comment*/
+		if (arr[fnd] < pivot)/* comment*/
 		{
-			if (arr[cur] != arr[fnd])
+			/* comment*/
+			if (arr[cur] != arr[fnd])/* comment*/
 			{
+				/* comment*/
 				swap(arr, cur, fnd);
 				print_array(arr, size);
 			}
-			cur++;
+			cur++;/* comment*/
 		}
 	}
-	if (arr[cur] != arr[last])
+	if (arr[cur] != arr[last])/* comment*/
 	{
-		swap(arr, cur, last);
-		print_array(arr, size);
+		/* comment*/
+		swap(arr, cur, last);/* comment*/
+		print_array(arr, size);/* comment*/
 	}
 	return (cur);
 }
@@ -66,7 +70,8 @@ void qs(int *arr, ssize_t first, ssize_t last, int size)
 	{
 		position = lomuto_partition(arr, first, last, size);
 
-		qs(arr, first, position - 1, size);
+		qs(arr, first, position - 1, size);/* comment*/
+		/* comment*/
 		qs(arr, position + 1, last, size);
 	}
 }
@@ -80,7 +85,8 @@ void qs(int *arr, ssize_t first, ssize_t last, int size)
 
 void quick_sort(int *arr, size_t size)
 {
-	if (!arr || size < 2)
+	if (!arr || size < 2)/* comment*/
 		return;
+		/* comment*/
 	qs(arr, 0, size - 1, size);
 }

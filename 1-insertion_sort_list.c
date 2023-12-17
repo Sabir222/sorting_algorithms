@@ -3,18 +3,20 @@
  * insertion_sort_list - fu
  * @list: D
  */
-void insertion_sort_list(listint_t **list)
+void insertion_sort_list(listint_t **list)/* comment*/
 {
 	listint_t *node;
 
-	if (list == NULL || (*list)->next == NULL)
+	if (list == NULL || (*list)->next == NULL)/* comment*/
 		return;
-	node = (*list)->next;
-	while (node)
+	node = (*list)->next;/* comment*/
+	/* comment*/
+	while (node)/* comment*/
 	{
-		while ((node->prev) && (node->prev->n > node->n))
+		while ((node->prev) && (node->prev->n > node->n))/* comment*/
 		{
-			node = swap_node(node, list);
+			node = swap_node(node, list);/* comment*/
+			/* comment*/
 			print_list(*list);
 		}
 		node = node->next;
@@ -31,15 +33,19 @@ listint_t *swap_node(listint_t *node, listint_t **list)
 	listint_t *back = node->prev, *current = node;
 	/*NULL, 19, 48, 9, 71, 13, NULL*/
 
-	back->next = current->next;
-	if (current->next)
-		current->next->prev = back;
-	current->next = back;
-	current->prev = back->prev;
-	back->prev = current;
-	if (current->prev)
-		current->prev->next = current;
+	back->next = current->next;/* comment*/
+	/* comment*/
+	if (current->next)/* comment*/
+		current->next->prev = back;/* comment*/
+		/* comment*/
+	current->next = back;/* comment*/
+	/* comment*/
+	current->prev = back->prev;/* comment*/
+	back->prev = current;/* comment*/
+	/* comment*/
+	if (current->prev)/* comment*/
+		current->prev->next = current;/* comment*/
 	else
-		*list = current;
+		*list = current;/* comment*/
 	return (current);
 }

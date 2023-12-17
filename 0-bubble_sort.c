@@ -12,14 +12,20 @@ void bubble_sort(int *arr, size_t size)
 	if (size < 2)
 		return;
 	for (numi = 0; numi < size; numi++)
-		for (dex = 0; dex < size; dex++)
+	/* comment*/
+		for (dex = 0; dex < size; dex++)/* comment*/
 		{
-			if (arr[dex] > arr[dex + 1] && arr[dex + 1])
+			/* comment*/
+			if (arr[dex] > arr[dex + 1] && arr[dex + 1])/* comment*/
 			{
 			okt = arr[dex];
-			arr[dex] = arr[dex + 1];
+			arr[dex] = arr[dex + 1];/* comment*/
+			/* comment*/
 			arr[dex + 1] = okt;
+			/* comment*/
+			/* comment*/
 			print_array(arr, size);
 			}
 		}
 }
+
