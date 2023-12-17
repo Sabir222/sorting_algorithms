@@ -1,9 +1,10 @@
 #include "sort.h"
 /**
- * insertion_sort_list - function that sorts a doubly linked list
- * of integers in ascending order using the Insertion sort algorithm
- * @list: Dobule linked list to sort
+ * insertion_sort_list - Sorting a doubly linked list because even lists
+ *                       deserve to be in order!
+ * @list: The majestic doubly linked list to untangle and sort
  */
+
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *node;
@@ -22,10 +23,10 @@ void insertion_sort_list(listint_t **list)
 	}
 }
 /**
- *swap_node - swap a node for his previous one
- *@node: node
- *@list: node list
- *Return: return a pointer to a node which was enter it
+ * swap_node - Because sometimes nodes want to dance and swap places
+ * @node: The daring node that wants to switch partners
+ * @list: The dance floor – your doubly linked list
+ * Return: A pointer to a node that just couldn't resist the swap
  */
 listint_t *swap_node(listint_t *node, listint_t **list)
 {

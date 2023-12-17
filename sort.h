@@ -3,11 +3,11 @@
 
 #include <stdlib.h>
 /**
- * struct listint_s - Doubly linked list node
+ * struct listint_s - Behold, the majestic Doubly Linked List node!
  *
- * @n: Integer stored in the node
- * @prev: Pointer to the previous element of the list
- * @next: Pointer to the next element of the list
+ * @n: The magical integer stored in this node
+ * @prev: A pointer to the past – the wise predecessor of this node
+ * @next: A pointer to the future – the promising successor of this node
  */
 typedef struct listint_s
 {

@@ -1,10 +1,11 @@
 #include "sort.h"
 /**
-*swap - the positions of two elements into an array
-*@array: array
-*@item1: array element
-*@item2: array element
-*/
+ * swap - Because sometimes in the array dance, elements like to tango
+ * @array: The dance floor – your array of elements
+ * @item1: The first dance partner to swap
+ * @item2: The second dance partner to swap
+ */
+
 void swap(int *array, ssize_t item1, ssize_t item2)
 {
 	int tmp;
@@ -14,13 +15,15 @@ void swap(int *array, ssize_t item1, ssize_t item2)
 	array[item2] = tmp;
 }
 /**
- *lomuto_partition - lomuto partition sorting scheme implementation
- *@array: array
- *@first: first array element
- *@last: last array element
- *@size: size array
- *Return: return the position of the last element sorted
+ * lomuto_partition - Embracing the chaos, dancing through the array,
+ *                    Lomuto style, because sorting is a party!
+ * @array: The dance floor – your array of elements
+ * @first: The starting point of the array adventure
+ * @last: The grand finale, the last array element
+ * @size: The size of the array – because every dance needs space
+ * Return: The dazzling position of the last element after the dance-off
  */
+
 int lomuto_partition(int *array, ssize_t first, ssize_t last, size_t size)
 {
 	int pivot = array[last];
@@ -46,12 +49,14 @@ int lomuto_partition(int *array, ssize_t first, ssize_t last, size_t size)
 	return (current);
 }
 /**
- *qs - qucksort algorithm implementation
- *@array: array
- *@first: first array element
- *@last: last array element
- *@size: array size
+ * qs - Because sometimes arrays need a little "quickness" in their life,
+ *      and what's quicker than a well-executed quicksort?
+ * @array: The arena for the quicksort showdown
+ * @first: The first contender in the sorting ring
+ * @last: The last warrior standing tall in the array battlefield
+ * @size: The size of the army – because size matters in the sorting war
  */
+
 void qs(int *array, ssize_t first, ssize_t last, int size)
 {
 	ssize_t position = 0;
@@ -66,10 +71,13 @@ void qs(int *array, ssize_t first, ssize_t last, int size)
 	}
 }
 /**
- *quick_sort - prepare the terrain to quicksort algorithm
- *@array: array
- *@size: array size
+ * quick_sort - Because sometimes arrays need a pep talk before
+ *              the quicksort algorithm kicks in – getting them ready
+ *              for the speediest sorting adventure!
+ * @array: The array battlefield, where sorting wars are won and lost
+ * @size: The size of the troops – because a well-prepared army conquers all
  */
+
 void quick_sort(int *array, size_t size)
 {
 	if (!array || size < 2)
